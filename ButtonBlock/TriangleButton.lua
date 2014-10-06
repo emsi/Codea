@@ -14,7 +14,7 @@ function TriangleButton:init(sprite, x, y, ax,ay, bx,by, cx,cy)
     parameter.watch (self.cx)
 end
 
-function TriangleButton:hit(point) -- returns true if the points is within button triangle
+function TriangleButton:hit(point) -- returns true if the point is within button triangle
     -- Compute vectors
     v0 = vec2(self.cx-self.ax,self.cy-self.ay)
     v1 = vec2(self.bx-self.ax,self.by-self.ay)
