@@ -13,4 +13,4 @@ See main.lua for usage example.
 
 To load the whole repo directly from the web type following code into a setup function of an empty project:
 
-`http.request("https://gist.githubusercontent.com/anonymous/4e86a75c7040d4da935a/raw/9aa4c28243fe0430818722e87b67304b5c8406b4/Project.lua",function(code) loadstring(code)() bootstrap() end)`
+`http.request("https://raw.githubusercontent.com/emsi/Codea/master/ButtonBlock/Bootstrap.lua",function(code) loadstring(code)() bootstrap() end)`
