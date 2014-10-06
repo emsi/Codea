@@ -3,11 +3,9 @@ ButtonBlock
 
 Button and block classes.
 
-Buttons can be pressed and assigned callback for press end release.
-
-Blocks are basically movable buttons.
-
-Whole code is multitouch aware. 
+Buttons can be pressed and assigned callback for press end release.<br/>
+Blocks are basically movable buttons.<br/>
+Whole code is multitouch aware. <br/>
 
 See main.lua for usage example.
 
