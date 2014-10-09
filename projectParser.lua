@@ -4,7 +4,7 @@
 -- Use projectParser.lua packageFile
 -- produces separate files created from the pakage file
 
-FILENAME=arg[1] or "_.gist"
+FILENAME=(arg and arg[1]) or "_.gist"
 
 -- iter and tabs functions by juce, Jmv38 and HyroVitalyProtago
 local function iter(obj)
