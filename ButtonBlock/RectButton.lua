@@ -2,10 +2,10 @@
 
 RectButton = class()
 
-function RectButton:onTouchBegan(t) end -- user defined
-function RectButton:onTouchEnded(t) end -- user defined
-function RectButton:onTouchMoving(t) end -- user defined
-function RectButton:onTouch(t) end -- user defined
+function RectButton:onTouchBegan(self, t) end -- user defined
+function RectButton:onTouchEnded(self, t) end -- user defined
+function RectButton:onTouchMoving(self, t) end -- user defined
+function RectButton:onTouch(self, t) end -- user defined
 
 function RectButton:init(sprite, x, y)
     self.x, self.y, self.sprite=x, y, sprite 
@@ -20,18 +20,18 @@ function RectButton:draw()
 end
 
 function RectButton:touched(touch)
-    self.onTouch() -- process callback
+    self.onTouch(self, touch) -- process callback
     if not self.activeTouch then -- the button was not touched
         if touch.state==BEGAN and self:hit(vec2(touch.x,touch.y)) then -- new touch began
             self.activeTouch=touch.id -- remember the touch id
             self.size=self.w*self.touchCoef -- enlarge the button
-            self.onTouchBegan(touch) -- process callback
+            self.onTouchBegan(self, touch) -- process callback
         end
     elseif self.activeTouch==touch.id then -- the button was touched
         if touch.state==ENDED then -- the touch ended
             self.size=self.w -- restore normal button size
             self.activeTouch=nil -- clear the remembered touch
-            self.onTouchEnded(touch) -- callback
+            self.onTouchEnded(self, touch) -- callback
         end
     end
 end
